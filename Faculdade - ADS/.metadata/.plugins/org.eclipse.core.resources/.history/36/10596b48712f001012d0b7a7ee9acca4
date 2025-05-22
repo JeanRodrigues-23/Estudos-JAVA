@@ -1,0 +1,17 @@
+package codigos;
+
+public class Programa {
+
+	/*
+	 * Sintese
+	 * Entrada: nao se aplica. Sera feito com atribuicao
+	 * Objetivo: realizar a media de dois valores double
+	 */
+	
+	public static void main(String[] args) {
+		double notaUm;
+		double notaDois;
+
+	}
+
+}

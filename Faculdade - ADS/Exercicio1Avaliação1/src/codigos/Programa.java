@@ -1,0 +1,21 @@
+package codigos;
+
+public class Programa {
+
+	/*
+	 * Sintese
+	 * Entrada: nao se aplica. Sera feito com atribuicao
+	 * Objetivo: realizar a media de dois valores double
+	 */
+	
+	public static void main(String[] args) {
+		double notaUm = 10.0;
+		double notaDois = 7.0;
+		double media = (notaUm + notaDois) / 2;
+		
+		System.out.println("A media eh: " + media);
+		System.out.printf("A media eh: " + media);
+
+	}
+
+}
