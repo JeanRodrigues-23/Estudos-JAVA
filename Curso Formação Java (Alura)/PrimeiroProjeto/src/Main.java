@@ -1,15 +1,29 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.sql.SQLOutput;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("Esse é o screen Match");
+        System.out.println("Filme: Top Gun: Maverick");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        int anoDeLancamento = 2022;
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
+        boolean incluidoNoPlano = true;
+        double notaDoFilme = 8.1;
+
+        // Este trecho calcula a média
+        double media = (9.8 + 6.3 + 8.0) / 3;
+        System.out.println(media);
+        String sinopse;
+        sinopse = """
+                Filme Top Gun
+                Filme de aventura com galã dos anos 80
+                Muito bom!
+                Ano de lançamento
+                """ + anoDeLancamento;
+        System.out.println(sinopse);
+
+        int classificacao;
+        classificacao = (int) (media / 2);
+        System.out.println(classificacao);
     }
 }
