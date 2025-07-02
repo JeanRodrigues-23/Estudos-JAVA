@@ -8,7 +8,15 @@
       <module fileurl="file://$PROJECT_DIR$/Ex003-Atividades/Ex003-Atividades.iml" filepath="$PROJECT_DIR$/Ex003-Atividades/Ex003-Atividades.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex004-JogodeAdivinhacao/Ex004-JogodeAdivinhacao.iml" filepath="$PROJECT_DIR$/Ex004-JogodeAdivinhacao/Ex004-JogodeAdivinhacao.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex006-HoraDaPratica/Ex006-HoraDaPratica.iml" filepath="$PROJECT_DIR$/Ex006-HoraDaPratica/Ex006-HoraDaPratica.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex007-ContaBancaria/Ex007-ContaBancaria.iml" filepath="$PROJECT_DIR$/Ex007-ContaBancaria/Ex007-ContaBancaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex008-OlaMundoInstanciacao/Ex008-OlaMundoInstanciacao.iml" filepath="$PROJECT_DIR$/Ex008-OlaMundoInstanciacao/Ex008-OlaMundoInstanciacao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex009-Calculadora/Ex009-Calculadora.iml" filepath="$PROJECT_DIR$/Ex009-Calculadora/Ex009-Calculadora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex010-Musica/Ex010-Musica.iml" filepath="$PROJECT_DIR$/Ex010-Musica/Ex010-Musica.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex011-Carro/Ex011-Carro.iml" filepath="$PROJECT_DIR$/Ex011-Carro/Ex011-Carro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex012-Aluno/Ex012-Aluno.iml" filepath="$PROJECT_DIR$/Ex012-Aluno/Ex012-Aluno.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex013 - Banco/Ex013 - Banco.iml" filepath="$PROJECT_DIR$/Ex013 - Banco/Ex013 - Banco.iml" />
       <module fileurl="file://$PROJECT_DIR$/PrimeiroProjeto/PrimeiroProjeto.iml" filepath="$PROJECT_DIR$/PrimeiroProjeto/PrimeiroProjeto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/screenmatch/screenmatch.iml" filepath="$PROJECT_DIR$/screenmatch/screenmatch.iml" />
     </modules>
   </component>
 </project>
