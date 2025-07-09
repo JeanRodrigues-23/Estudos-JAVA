@@ -1,18 +1,25 @@
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
-import br.com.alura.screenmatch.modelos.Titulo;
+import br.com.alura.screenmatch.modelos.Episodios;
 
 public class Principal {
 
     public static void main(String[] args) {
         Filme favorito = new Filme();
-
         favorito.setNome("The Matrix");
         favorito.setAnoDeLancamento(1999);
         favorito.setDuracaoEmMinutos(135);
         favorito.setIncluidoNoPlano(true);
         System.out.println("A duração do filme é de: " + favorito.getDuracaoEmMinutos());
+
+        Filme meuFilme = new Filme();
+        favorito.setNome("A Bruxa");
+        favorito.setAnoDeLancamento(2019);
+        favorito.setDuracaoEmMinutos(115);
+        favorito.setIncluidoNoPlano(true);
+        System.out.println("A duração do filme é de: " + meuFilme.getDuracaoEmMinutos());
 
         Filme outroFilme = new Filme();
         outroFilme.setNome("Avatar");
@@ -41,6 +48,13 @@ public class Principal {
         calculadora.inclui(outroFilme);
         System.out.println("Tempo total: " + calculadora.getTempoTotal());
 
-    }
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
 
+        Episodios episodio = new Episodios();
+        episodio.setNumero(1);
+        episodio.setSerie(lost);
+        episodio.setTotalVisualiazcoes(300);
+        filtro.filtra(episodio);
+    }
 }
