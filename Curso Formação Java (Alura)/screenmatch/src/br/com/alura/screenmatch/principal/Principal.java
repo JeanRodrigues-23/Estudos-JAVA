@@ -1,3 +1,5 @@
+package br.com.alura.screenmatch.principal;
+
 import br.com.alura.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.alura.screenmatch.calculos.FiltroRecomendacao;
 import br.com.alura.screenmatch.modelos.Filme;
@@ -9,23 +11,17 @@ import java.util.ArrayList;
 public class Principal {
 
     public static void main(String[] args) {
-        Filme favorito = new Filme();
-        favorito.setNome("The Matrix");
-        favorito.setAnoDeLancamento(1999);
+        Filme favorito = new Filme("Matrix", 1999);
         favorito.setDuracaoEmMinutos(135);
         favorito.setIncluidoNoPlano(true);
         System.out.println("A duração do filme é de: " + favorito.getDuracaoEmMinutos());
 
-        Filme meuFilme = new Filme();
-        favorito.setNome("A Bruxa");
-        favorito.setAnoDeLancamento(2019);
+        Filme meuFilme = new Filme("A bruxa", 2019);
         favorito.setDuracaoEmMinutos(115);
         favorito.setIncluidoNoPlano(true);
         System.out.println("A duração do filme é de: " + meuFilme.getDuracaoEmMinutos());
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        Filme outroFilme = new Filme("Avatar", 2023);
         outroFilme.setDuracaoEmMinutos(200);
         outroFilme.setIncluidoNoPlano(true);
 
@@ -36,9 +32,7 @@ public class Principal {
 
         System.out.println("Média de avaliações do filme: " + favorito.pegaMedia());
 
-        Serie lost = new Serie();
-        lost.setNome("Lost");
-        lost.setAnoDeLancamento(2000);
+        Serie lost = new Serie("Lost", 2000);
         lost.exibeFichaTecnica();
         lost.setTemporadas(10);
         lost.setEpisodiosPorTemporada(10);
@@ -59,10 +53,8 @@ public class Principal {
         episodio.setTotalVisualiazcoes(300);
         filtro.filtra(episodio);
 
-        Filme filmeDoPaulo = new Filme();
-        filmeDoPaulo.setNome("Dogville");
+        Filme filmeDoPaulo = new Filme("DogVille", 2003);
         filmeDoPaulo.setDuracaoEmMinutos(200);
-        filmeDoPaulo.setAnoDeLancamento(2003);
         filmeDoPaulo.avalia(10);
 
         ArrayList<Filme> listaDeFilmes = new ArrayList<>();
