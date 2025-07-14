@@ -12,7 +12,7 @@ public class Main {
         listaDeContas.add(c2);
         listaDeContas.add(c3);
 
-        ContaBancaria contaMaiorSaldo;
+        ContaBancaria contaMaiorSaldo = null;
         for (ContaBancaria item : listaDeContas) {
             double maiorSaldo = 0;
             if (maiorSaldo < item.getSaldo()) {
