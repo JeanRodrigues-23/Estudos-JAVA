@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class Main {
         Titulo filme6 = new Titulo("Homem Aranha");
         Titulo filme7 = new Titulo("Batman");
 
-        ArrayList<Titulo> listaFilmes = new ArrayList<>();
+        List<Titulo> listaFilmes = new ArrayList<>();
         listaFilmes.add(filme1);
         listaFilmes.add(filme2);
         listaFilmes.add(filme3);
