@@ -32,6 +32,6 @@ public abstract class Task implements TaskItem{
 
     @Override
     public String toString() {
-        return "Tarefa: " + getTitulo() + " Descrição: " + getDescricao();
+        return getTitulo() + " - " + getDescricao();
     }
 }

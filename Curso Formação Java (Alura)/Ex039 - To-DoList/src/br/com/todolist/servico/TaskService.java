@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskService {
-    public List<TaskItem> tarefas;
+    private List<TaskItem> tarefas;
 
     public TaskService() {
         tarefas = new ArrayList<>();
@@ -19,16 +19,19 @@ public class TaskService {
     public void listarTasks() {
         System.out.println("Aqui estão suas tarefas:");
         for (TaskItem item : tarefas) {
-        System.out.println("Tarefa: " + tarefas.indexOf(item) + ": " + item);
+        System.out.println("Tarefa " + (tarefas.indexOf(item) + 1) + ": " + item);
         }
+        System.out.println();
     }
 
     public void marcarConcluida(int indice) {
-            tarefas.get(indice).marcarComoConcluida();
+        indice -= 1;
+        tarefas.get(indice).marcarComoConcluida();
     }
 
     public void removerTask(int indice) {
-            tarefas.remove(indice);
+        indice -= 1;
+        tarefas.remove(indice);
         }
     }
 
