@@ -1,8 +1,6 @@
 package br.com.biblioteca.aplicacao;
 
-import br.com.biblioteca.modelos.LeitorComum;
 import br.com.biblioteca.modelos.Livro;
-import br.com.biblioteca.modelos.Pesquisador;
 import br.com.biblioteca.servicos.Servicos;
 
 import java.util.Scanner;
@@ -15,7 +13,7 @@ public class Main {
         System.out.println("Seja bem vindo à nossa biblioteca!\n");
         int opcao = 1;
         while (opcao != 0) {
-            System.out.println(String.format("""
+            System.out.println("""
                     MENU
                     [1] Cadastrar um livro.
                     [2] Cadastrar um usuário.
@@ -27,7 +25,7 @@ public class Main {
                     [0] Sair do programa.
                     
                     Escolha uma opção:
-                    """));
+                    """);
             opcao = leitura.nextInt();
             leitura.nextLine();
 

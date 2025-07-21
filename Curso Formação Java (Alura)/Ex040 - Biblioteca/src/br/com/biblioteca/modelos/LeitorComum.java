@@ -1,7 +1,5 @@
 package br.com.biblioteca.modelos;
 
-import br.com.biblioteca.servicos.Servicos;
-
 import java.util.ArrayList;
 
 public class LeitorComum extends Usuario{

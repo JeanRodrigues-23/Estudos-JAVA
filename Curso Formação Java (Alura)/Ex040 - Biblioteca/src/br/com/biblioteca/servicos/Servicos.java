@@ -38,8 +38,8 @@ public class Servicos {
         int indiceLivro = leitura.nextInt();
         leitura.nextLine();
 
-        Usuario usuario = listaUsuarios.get(indiceUsuario);
-        Livro livro = listaLivros.get(indiceLivro);
+        Usuario usuario = listaUsuarios.get(indiceUsuario - 1);
+        Livro livro = listaLivros.get(indiceLivro - 1);
 
         if (usuario instanceof LeitorComum) {
             if (usuario.getLivrosEmprestados().size() < 3 && livro.isDisponivel()) {
@@ -65,7 +65,7 @@ public class Servicos {
         int indice = leitura.nextInt();
         leitura.nextLine();
 
-        Livro livro = listaLivros.get(indice);
+        Livro livro = listaLivros.get(indice - 1);
 
         if (livro.isDisponivel()) {
             System.out.println("Este livro não está emprestado.");
@@ -91,7 +91,7 @@ public class Servicos {
                 for (Usuario leitor : listaUsuarios) {
                     for (Livro livro : leitor.getLivrosEmprestados()) {
                         if (item.getId() == livro.getId()) {
-                            System.out.println((leitor.getLivrosEmprestados().indexOf(item) + 1) + " - " + item.getTitulo() + " - Está emprestado para " + leitor.getNome());
+                            System.out.println((listaLivros.indexOf(item) + 1) + " - " + item.getTitulo() + " - Está emprestado para " + leitor.getNome());
                         }
                     }
                 }
@@ -114,10 +114,10 @@ public class Servicos {
         System.out.print("Será que tipo de usuário?");
 
         while (true) {
-            System.out.println(String.format("""
+            System.out.println("""
                     \n[1] Leitor comum
                     [2] Pesquisador
-                    """));
+                    """);
             int opcaoUsuario = leitura.nextInt();
             leitura.nextLine();
 

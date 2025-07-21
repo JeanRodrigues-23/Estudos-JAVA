@@ -9,7 +9,7 @@ public class Livro {
     private boolean disponivel;
     private int id;
 
-    static int idAutomatico = 0;
+    public static int idAutomatico = 0;
 
     public Livro() {
         Scanner leitura = new Scanner(System.in);
@@ -23,7 +23,7 @@ public class Livro {
 
         this.disponivel = true;
         this.id = idAutomatico + 1;
-        idAutomatico =+ 1;
+        idAutomatico += 1;
 
         System.out.println("Livro cadastrado!");
 
