@@ -10,12 +10,12 @@ public class Main {
         Scanner leitura = new Scanner(System.in);
 
         System.out.println("""
-                -- Pesquisador de livros --
-                Digite o título de um livro:
+                Olá! Vamos conferir receitas!
+                Me informe uma receita do seu interesse:
                 """);
-        var tituloLivro = leitura.nextLine();
+        var receita = leitura.nextLine();
 
-        var endereco = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + tituloLivro + "&key=";
+        var endereco = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + receita;
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
