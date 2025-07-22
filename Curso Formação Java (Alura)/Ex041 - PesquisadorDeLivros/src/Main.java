@@ -9,13 +9,14 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         Scanner leitura = new Scanner(System.in);
 
+
         System.out.println("""
                 -- Pesquisador de livros --
                 Digite o título de um livro:
                 """);
         var tituloLivro = leitura.nextLine();
 
-        var endereco = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + tituloLivro + "&key=AIzaSyCB5yQoaC6UsGeDZb3P2JHKjhVYimPUZho";
+        var endereco = "https://www.googleapis.com/books/v1/volumes?q=intitle:" + tituloLivro + "&key=";
 
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder().uri(URI.create(endereco)).build();
