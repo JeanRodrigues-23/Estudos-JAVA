@@ -15,9 +15,6 @@ public class Principal {
                 """);
         var moeda = leitura.nextLine();
 
-
-
-
         var endereco = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=" + moeda + "&x_cg_demo_api_key=";
 
         HttpClient client = HttpClient.newHttpClient();
