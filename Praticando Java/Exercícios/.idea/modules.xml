@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Ex001 - InformacoesDoUsuario/Ex001 - InformacoesDoUsuario.iml" filepath="$PROJECT_DIR$/Ex001 - InformacoesDoUsuario/Ex001 - InformacoesDoUsuario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex002 - Estoque/Ex002 - Estoque.iml" filepath="$PROJECT_DIR$/Ex002 - Estoque/Ex002 - Estoque.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex003 - MediaNotas/Ex003 - MediaNotas.iml" filepath="$PROJECT_DIR$/Ex003 - MediaNotas/Ex003 - MediaNotas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex004 - ConversaoTemperatura/Ex004 - ConversaoTemperatura.iml" filepath="$PROJECT_DIR$/Ex004 - ConversaoTemperatura/Ex004 - ConversaoTemperatura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex005 - Livraria/Ex005 - Livraria.iml" filepath="$PROJECT_DIR$/Ex005 - Livraria/Ex005 - Livraria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex006 - CategorizadorDePrecos/Ex006 - CategorizadorDePrecos.iml" filepath="$PROJECT_DIR$/Ex006 - CategorizadorDePrecos/Ex006 - CategorizadorDePrecos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex007 - ParOuImpar/Ex007 - ParOuImpar.iml" filepath="$PROJECT_DIR$/Ex007 - ParOuImpar/Ex007 - ParOuImpar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex008 - ConversorMoedas/Ex008 - ConversorMoedas.iml" filepath="$PROJECT_DIR$/Ex008 - ConversorMoedas/Ex008 - ConversorMoedas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex009 - CorrecaoErroIdade/Ex009 - CorrecaoErroIdade.iml" filepath="$PROJECT_DIR$/Ex009 - CorrecaoErroIdade/Ex009 - CorrecaoErroIdade.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex010 - ConsumoEAutonomia/Ex010 - ConsumoEAutonomia.iml" filepath="$PROJECT_DIR$/Ex010 - ConsumoEAutonomia/Ex010 - ConsumoEAutonomia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex011 - ParOuImparExtenso/Ex011 - ParOuImparExtenso.iml" filepath="$PROJECT_DIR$/Ex011 - ParOuImparExtenso/Ex011 - ParOuImparExtenso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex012 - VerificadorAprovacao/Ex012 - VerificadorAprovacao.iml" filepath="$PROJECT_DIR$/Ex012 - VerificadorAprovacao/Ex012 - VerificadorAprovacao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex013 - VerificadorSenha/Ex013 - VerificadorSenha.iml" filepath="$PROJECT_DIR$/Ex013 - VerificadorSenha/Ex013 - VerificadorSenha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex014 - ComparadorNumeros/Ex014 - ComparadorNumeros.iml" filepath="$PROJECT_DIR$/Ex014 - ComparadorNumeros/Ex014 - ComparadorNumeros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex015 - VerificadorDesconto/Ex015 - VerificadorDesconto.iml" filepath="$PROJECT_DIR$/Ex015 - VerificadorDesconto/Ex015 - VerificadorDesconto.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex016 - VerificadorDiaDaSemana/Ex016 - VerificadorDiaDaSemana.iml" filepath="$PROJECT_DIR$/Ex016 - VerificadorDiaDaSemana/Ex016 - VerificadorDiaDaSemana.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex017 - VerificadorEmprestimo/Ex017 - VerificadorEmprestimo.iml" filepath="$PROJECT_DIR$/Ex017 - VerificadorEmprestimo/Ex017 - VerificadorEmprestimo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex018 - VerificadorTriangulo/Ex018 - VerificadorTriangulo.iml" filepath="$PROJECT_DIR$/Ex018 - VerificadorTriangulo/Ex018 - VerificadorTriangulo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex019 - VerificadorDoador/Ex019 - VerificadorDoador.iml" filepath="$PROJECT_DIR$/Ex019 - VerificadorDoador/Ex019 - VerificadorDoador.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex020 - VerificadorAcesso/Ex020 - VerificadorAcesso.iml" filepath="$PROJECT_DIR$/Ex020 - VerificadorAcesso/Ex020 - VerificadorAcesso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex021 - Escadaria/Ex021 - Escadaria.iml" filepath="$PROJECT_DIR$/Ex021 - Escadaria/Ex021 - Escadaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex022 - SomaValores/Ex022 - SomaValores.iml" filepath="$PROJECT_DIR$/Ex022 - SomaValores/Ex022 - SomaValores.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex023 - SomaParesAte100/Ex023 - SomaParesAte100.iml" filepath="$PROJECT_DIR$/Ex023 - SomaParesAte100/Ex023 - SomaParesAte100.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex024 - Fatorial/Ex024 - Fatorial.iml" filepath="$PROJECT_DIR$/Ex024 - Fatorial/Ex024 - Fatorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Exercícios.iml" filepath="$PROJECT_DIR$/.idea/Exercícios.iml" />
+    </modules>
+  </component>
+</project>
