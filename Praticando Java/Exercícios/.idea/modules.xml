@@ -26,6 +26,22 @@
       <module fileurl="file://$PROJECT_DIR$/Ex022 - SomaValores/Ex022 - SomaValores.iml" filepath="$PROJECT_DIR$/Ex022 - SomaValores/Ex022 - SomaValores.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex023 - SomaParesAte100/Ex023 - SomaParesAte100.iml" filepath="$PROJECT_DIR$/Ex023 - SomaParesAte100/Ex023 - SomaParesAte100.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex024 - Fatorial/Ex024 - Fatorial.iml" filepath="$PROJECT_DIR$/Ex024 - Fatorial/Ex024 - Fatorial.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex025 - IdentificandoOMaior/Ex025 - IdentificandoOMaior.iml" filepath="$PROJECT_DIR$/Ex025 - IdentificandoOMaior/Ex025 - IdentificandoOMaior.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex026 - TentativaSenha/Ex026 - TentativaSenha.iml" filepath="$PROJECT_DIR$/Ex026 - TentativaSenha/Ex026 - TentativaSenha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex027 - VerificandoNome/Ex027 - VerificandoNome.iml" filepath="$PROJECT_DIR$/Ex027 - VerificandoNome/Ex027 - VerificandoNome.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex028 - SomaPositivoNegativo/Ex028 - SomaPositivoNegativo.iml" filepath="$PROJECT_DIR$/Ex028 - SomaPositivoNegativo/Ex028 - SomaPositivoNegativo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex029 - VerificadorTerminaEm5/Ex029 - VerificadorTerminaEm5.iml" filepath="$PROJECT_DIR$/Ex029 - VerificadorTerminaEm5/Ex029 - VerificadorTerminaEm5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex030 - OrganizadorAniverario/Ex030 - OrganizadorAniverario.iml" filepath="$PROJECT_DIR$/Ex030 - OrganizadorAniverario/Ex030 - OrganizadorAniverario.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex031 - RemovedorEspacos/Ex031 - RemovedorEspacos.iml" filepath="$PROJECT_DIR$/Ex031 - RemovedorEspacos/Ex031 - RemovedorEspacos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex032 - MaiusculaMinuscula/Ex032 - MaiusculaMinuscula.iml" filepath="$PROJECT_DIR$/Ex032 - MaiusculaMinuscula/Ex032 - MaiusculaMinuscula.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex033 - SubstituicaoPalavras/Ex033 - SubstituicaoPalavras.iml" filepath="$PROJECT_DIR$/Ex033 - SubstituicaoPalavras/Ex033 - SubstituicaoPalavras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex034 - RetirarFormato/Ex034 - RetirarFormato.iml" filepath="$PROJECT_DIR$/Ex034 - RetirarFormato/Ex034 - RetirarFormato.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex035 - VerificadorPalavras/Ex035 - VerificadorPalavras.iml" filepath="$PROJECT_DIR$/Ex035 - VerificadorPalavras/Ex035 - VerificadorPalavras.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex036 - FormatarNumeros/Ex036 - FormatarNumeros.iml" filepath="$PROJECT_DIR$/Ex036 - FormatarNumeros/Ex036 - FormatarNumeros.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex037 - VerificadorCodigo/Ex037 - VerificadorCodigo.iml" filepath="$PROJECT_DIR$/Ex037 - VerificadorCodigo/Ex037 - VerificadorCodigo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex038 - VerificadorCPF/Ex038 - VerificadorCPF.iml" filepath="$PROJECT_DIR$/Ex038 - VerificadorCPF/Ex038 - VerificadorCPF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex039 - VerificadorHashtags/Ex039 - VerificadorHashtags.iml" filepath="$PROJECT_DIR$/Ex039 - VerificadorHashtags/Ex039 - VerificadorHashtags.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex040 - ValidarSenha/Ex040 - ValidarSenha.iml" filepath="$PROJECT_DIR$/Ex040 - ValidarSenha/Ex040 - ValidarSenha.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Exercícios.iml" filepath="$PROJECT_DIR$/.idea/Exercícios.iml" />
     </modules>
   </component>
