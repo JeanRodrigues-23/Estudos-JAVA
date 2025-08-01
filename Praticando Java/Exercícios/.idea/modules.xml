@@ -42,6 +42,12 @@
       <module fileurl="file://$PROJECT_DIR$/Ex038 - VerificadorCPF/Ex038 - VerificadorCPF.iml" filepath="$PROJECT_DIR$/Ex038 - VerificadorCPF/Ex038 - VerificadorCPF.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex039 - VerificadorHashtags/Ex039 - VerificadorHashtags.iml" filepath="$PROJECT_DIR$/Ex039 - VerificadorHashtags/Ex039 - VerificadorHashtags.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ex040 - ValidarSenha/Ex040 - ValidarSenha.iml" filepath="$PROJECT_DIR$/Ex040 - ValidarSenha/Ex040 - ValidarSenha.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex041 - DataEHoraTarefa/Ex041 - DataEHoraTarefa.iml" filepath="$PROJECT_DIR$/Ex041 - DataEHoraTarefa/Ex041 - DataEHoraTarefa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex042 - FormatacaoDataEHora/Ex042 - FormatacaoDataEHora.iml" filepath="$PROJECT_DIR$/Ex042 - FormatacaoDataEHora/Ex042 - FormatacaoDataEHora.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex043 - ContadorTempo/Ex043 - ContadorTempo.iml" filepath="$PROJECT_DIR$/Ex043 - ContadorTempo/Ex043 - ContadorTempo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex044 - ContadorData/Ex044 - ContadorData.iml" filepath="$PROJECT_DIR$/Ex044 - ContadorData/Ex044 - ContadorData.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex045 - ControleDeVencimento/Ex045 - ControleDeVencimento.iml" filepath="$PROJECT_DIR$/Ex045 - ControleDeVencimento/Ex045 - ControleDeVencimento.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ex046 - ComparadorDatas/Ex046 - ComparadorDatas.iml" filepath="$PROJECT_DIR$/Ex046 - ComparadorDatas/Ex046 - ComparadorDatas.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Exercícios.iml" filepath="$PROJECT_DIR$/.idea/Exercícios.iml" />
     </modules>
   </component>
