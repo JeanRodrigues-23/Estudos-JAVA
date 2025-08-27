@@ -31,6 +31,14 @@ public class Principal {
 			listaTemporadas.add(temporada);
 		}
 		listaTemporadas.forEach(System.out::println);
-    }
 
+//        for (int i = 0; i < listaTemporadas.size(); i++) {
+//            for (int j = 0; j < listaTemporadas.get(i).episodios().size(); j++) {
+//                System.out.println(listaTemporadas.get(i).episodios().get(j).titulo());
+//            }
+//        }
+
+        listaTemporadas.forEach(t -> t.episodios().forEach(e -> System.out.println(e.titulo())));
+    }
 }
+
