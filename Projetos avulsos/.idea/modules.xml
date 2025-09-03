@@ -3,6 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/001 - TestandoException/001 - TestandoException.iml" filepath="$PROJECT_DIR$/001 - TestandoException/001 - TestandoException.iml" />
+      <module fileurl="file://$PROJECT_DIR$/002 - ReferenciaAMetodos/002 - ReferenciaAMetodos.iml" filepath="$PROJECT_DIR$/002 - ReferenciaAMetodos/002 - ReferenciaAMetodos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/003 - ReferenciaAMetodos/003 - ReferenciaAMetodos.iml" filepath="$PROJECT_DIR$/003 - ReferenciaAMetodos/003 - ReferenciaAMetodos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/004 - ReferenciaAMetodos/004 - ReferenciaAMetodos.iml" filepath="$PROJECT_DIR$/004 - ReferenciaAMetodos/004 - ReferenciaAMetodos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/005 - ReferenciaAMetodos/005 - ReferenciaAMetodos.iml" filepath="$PROJECT_DIR$/005 - ReferenciaAMetodos/005 - ReferenciaAMetodos.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Projetos avulsos.iml" filepath="$PROJECT_DIR$/.idea/Projetos avulsos.iml" />
     </modules>
   </component>
