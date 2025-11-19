@@ -3,9 +3,15 @@ package br.com.alura.screenmatch.Principal;
 import br.com.alura.screenmatch.model.DadosEpisodio;
 import br.com.alura.screenmatch.model.DadosSerie;
 import br.com.alura.screenmatch.model.DadosTemporada;
+import br.com.alura.screenmatch.model.Episodio;
 import br.com.alura.screenmatch.service.ConsumoAPI;
 import br.com.alura.screenmatch.service.ConverteDados;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -58,6 +64,34 @@ public class Principal {
                 .limit(5)
                 .sorted(Comparator.comparing(DadosEpisodio::avaliacao).reversed())
                 .forEach(System.out::println);
+
+        List<Episodio> episodios = listaTemporadas.stream()
+                .flatMap(t -> t.episodios().stream()
+                        .map(d -> new Episodio(t.numero(), d))
+                ).collect(Collectors.toList());
+
+        episodios.forEach(System.out::println);
+
+        System.out.println("A partir de que ano de lançamento do episódio você deseja ver? ");
+        var ano = leitura.nextInt();
+        leitura.nextLine();
+
+        LocalDate busca = LocalDate.of(ano, 1, 1);
+
+        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        episodios.stream()
+                .filter(e -> e.getDataLancamento() != null && e.getDataLancamento().isAfter(busca))
+                .forEach(e -> System.out.println(
+                        "Temporada: " + e.getTemporada() +
+                        ", episódio: " + e.getTitulo() +
+                        ", data de lançamento: " + e.getDataLancamento().format(formatador)));
+
+        List<Episodio> Top5EpisodiosRecentes = episodios.stream()
+                .filter(e -> e.getDataLancamento() != null)
+                .sorted(Comparator.comparing(Episodio::getDataLancamento).reversed())
+                .limit(5)
+                .collect(Collectors.toList());
+
     }
 }
 
