@@ -68,8 +68,7 @@ public class Principal {
 
         buscaModelo.forEach(System.out::println);
 
-        //-----------------
-
+        // Consulta de valores
         System.out.println("Digite o código do modelo para consultar valores:");
         String codigoModeloEscolhido = leitura.nextLine();
 
@@ -84,6 +83,23 @@ public class Principal {
         }
 
         valorFipeList.forEach(System.out::println);
+
+         List<Veiculo> veiculos = new ArrayList<>();
+         for (int i = 0; i < anos.size(); i++) {
+             var enderecoAnos = endereco + "/" + anos.get(i).codigo();
+             json = consumo.obterDados(enderecoAnos);
+             Veiculo veiculo = conversor.obterDados (json, Veiculo.class);
+             veiculos.add(veiculo);
+         }
+
+
+         anos.stream()
+                 .forEach(a -> {
+                     var enderecoAnos = endereco + "/" + anos.get(i).codigo();
+                     json = consumo.obterDados(enderecoAnos);
+                     Veiculo veiculo = conversor.obterDados (json, Veiculo.class);
+                     veiculos.add(veiculo)
+                 });
 
     }
 }
