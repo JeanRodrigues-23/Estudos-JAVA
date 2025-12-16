@@ -1,9 +1,8 @@
 package com.alura.gerenciador_pedidos.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Categoria {
@@ -11,6 +10,15 @@ public class Categoria {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Produto> produtos;
+
+    public Categoria(){}
+
+    public Categoria(Long id, String nome) {
+        this.id = id;
+        this.produtos = produtos;
+    }
 
     public Categoria(String nome) {
         this.nome = nome;
@@ -30,5 +38,14 @@ public class Categoria {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(List<Produto> produto) {
+        this.produtos = produto;
+        produto.forEach(e -> e.setCategoria(this));
     }
 }
