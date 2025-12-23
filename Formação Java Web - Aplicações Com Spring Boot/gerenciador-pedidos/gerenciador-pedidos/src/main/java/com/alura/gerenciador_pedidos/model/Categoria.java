@@ -48,4 +48,9 @@ public class Categoria {
         this.produtos = produto;
         produto.forEach(e -> e.setCategoria(this));
     }
+
+    @Override
+    public String toString() {
+        return "nome = " + this.nome;
+    }
 }

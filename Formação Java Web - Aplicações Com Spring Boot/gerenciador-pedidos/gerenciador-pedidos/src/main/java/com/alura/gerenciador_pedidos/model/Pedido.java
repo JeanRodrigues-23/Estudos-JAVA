@@ -12,13 +12,6 @@ public class Pedido {
     private Long id;
     private LocalDate data;
 
-    public Pedido(Long id, LocalDate data) {
-        this.id = id;
-        this.data = data;
-    }
-
-    public Pedido() {}
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "pedido_produto",
@@ -26,6 +19,13 @@ public class Pedido {
             inverseJoinColumns = @JoinColumn(name = "produto_id")
     )
     private List<Produto> produtos;
+
+    public Pedido(Long id, LocalDate data) {
+        this.id = id;
+        this.data = data;
+    }
+
+    public Pedido() {}
 
     public Pedido(LocalDate data) {
         this.data = data;
@@ -53,5 +53,10 @@ public class Pedido {
 
     public void setProdutos(List<Produto> produtos) {
         this.produtos = produtos;
+    }
+
+    @Override
+    public String toString() {
+        return "data = " + this.data;
     }
 }

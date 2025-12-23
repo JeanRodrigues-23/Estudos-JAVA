@@ -26,5 +26,8 @@ public class Fornecedor {
         this.nome = nome;
     }
 
-
+    @Override
+    public String toString() {
+        return "nome = " + this.nome;
+    }
 }
