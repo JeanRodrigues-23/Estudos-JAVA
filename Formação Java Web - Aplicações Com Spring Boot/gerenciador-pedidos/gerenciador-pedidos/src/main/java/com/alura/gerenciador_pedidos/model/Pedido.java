@@ -11,7 +11,6 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private LocalDate data;
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "pedido_produto",

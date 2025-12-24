@@ -213,5 +213,71 @@ public class Principal {
 //            System.out.println("Encontrado(s) " + produtoList + " produto(s)");
 //        }
 
+//        System.out.println("\nLOCALIZAR PEDIDOS POSTERIORES A UMA DATA\nDigite uma data de pedido(yyyy-MM-dd)");
+//        String dataString = leitura.nextLine();
+//        LocalDate dataConvertida = LocalDate.parse(dataString);
+//
+//        List<Pedido> pedidoList = pedidoRepository.findByDataAfter(dataConvertida);
+//
+//        if (pedidoList.isEmpty()) {
+//            System.out.println("Ops! Não foi localizado pedido posterior a essa data.");
+//        } else {
+//            System.out.println("Pedidos encontrados:");
+//            pedidoList.forEach(System.out::println);
+//        }
+
+//        System.out.println("\nLOCALIZAR PEDIDOS ANTERIORES A UMA DATA\nDigite uma data de pedido(yyyy-MM-dd)");
+//        String dataString = leitura.nextLine();
+//        LocalDate dataConvertida = LocalDate.parse(dataString);
+//
+//        List<Pedido> pedidoList = pedidoRepository.findByDataBefore(dataConvertida);
+//
+//        if (pedidoList.isEmpty()) {
+//            System.out.println("Ops! Não foi localizado pedido anterior a essa data.");
+//        } else {
+//            System.out.println("Pedidos encontrados:");
+//            pedidoList.forEach(System.out::println);
+//        }
+
+//        System.out.println("\nLOCALIZAR PEDIDOS FEITOS ENTRE DETERMINADAS DATAS\nDigite a data inicial:(yyyy-MM-dd)");
+//        String dataInicialString = leitura.nextLine();
+//        LocalDate dataInicial = LocalDate.parse(dataInicialString);
+//
+//        System.out.println("Digite a data final:(yyyy-MM-dd)");
+//        String dataFinalString = leitura.nextLine();
+//        LocalDate dataFinal = LocalDate.parse(dataFinalString);
+//
+//        List<Pedido> pedidoList = pedidoRepository.findByDataBetween(dataInicial, dataFinal);
+//
+//        if (pedidoList.isEmpty()) {
+//            System.out.println("Ops! Não foi localizado pedido anterior a essa data.");
+//        } else {
+//            System.out.println("Pedidos encontrados:");
+//            pedidoList.forEach(System.out::println);
+//        }
+
+//        System.out.println("\nLOCALIZAR OS TRÊS PEDIDOS MAIS CAROS");
+//        List<Produto> produtoList = produtoRepository.findTop3ByOrderByPrecoDesc();
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Produtos não localizados.");
+//        } else {
+//            System.out.println("produtos encontrados:");
+//            produtoList.forEach(System.out::println);
+//        }
+
+        System.out.println("\nLOCALIZAR OS CINCO PEDIDOS MAIS BARATOS DE UMA CATEGORIA\nDigite a categoria desejada:");
+        String categoriaDigitada = leitura.nextLine();
+
+        List<Produto> produtoList = produtoRepository.findByCategoria_NomeOrderByPreco(categoriaDigitada);
+
+        if (produtoList.isEmpty()) {
+            System.out.println("Ops! Nenhum produto localizado.");
+        } else {
+            System.out.println("Produtos encontrados:");
+            produtoList.forEach(p -> System.out.println((produtoList.indexOf(p) + 1) + " - " + p));
+        }
+
+
     }
 }

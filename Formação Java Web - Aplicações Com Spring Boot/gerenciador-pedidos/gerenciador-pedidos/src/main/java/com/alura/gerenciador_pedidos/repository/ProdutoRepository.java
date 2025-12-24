@@ -28,4 +28,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     List<Produto> findByPrecoLessThanOrNomeContainingIgnoreCase(double preco, String nome);
 
     long countByPrecoGreaterThan(double preco);
+
+    List<Produto> findTop3ByOrderByPrecoDesc();
+
+    List<Produto> findTop5ByCategoria_NomeOrderByPreco(String categoria);
 }
