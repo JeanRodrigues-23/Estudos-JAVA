@@ -1,0 +1,58 @@
+package com.alura.screenmusic.model;
+
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+public class Artista {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String nome;
+    private int idade;
+    private Genero genero;
+    private int decada;
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL)
+    private List<Musica> musica = new ArrayList<>();
+
+    public Artista(String nome, int idade, String genero, int decada) {
+        this.nome = nome;
+        this.idade = idade;
+        this.genero = Genero.retornaGenero(genero);
+        this.decada = decada;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public void setGenero(Genero genero) {
+        this.genero = genero;
+    }
+
+    public int getDecada() {
+        return decada;
+    }
+
+    public void setDecada(int decada) {
+        this.decada = decada;
+    }
+}
