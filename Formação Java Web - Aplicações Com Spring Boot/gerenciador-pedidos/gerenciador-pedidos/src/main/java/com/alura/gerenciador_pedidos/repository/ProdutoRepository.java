@@ -4,6 +4,7 @@ import com.alura.gerenciador_pedidos.model.Categoria;
 import com.alura.gerenciador_pedidos.model.Produto;
 import jakarta.persistence.Tuple;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.NativeQuery;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.query.JpqlQueryBuilder;
 import org.springframework.data.repository.query.Param;
@@ -75,4 +76,14 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
             "GROUP BY c " +
             "HAVING count(p.categoria) > :numeroMinimo")
     List<Tuple> retornaCategoriasComMinomoDeProdutos(long numeroMinimo);
+
+    @Query("SELECT p FROM Produto p " +
+            "WHERE (:nome IS NULL AND p.categoria.nome ILIKE :categoria) " +
+            "  OR (:categoria IS NULL AND p.nome ILIKE :nome)")
+    List<Produto> retornaProdutoPorNomeOuCategoria(String nome, String categoria);
+
+    @Query(value = "SELECT * FROM produto p " +
+                  "ORDER BY p.valor DESC " +
+                  "LIMIT 5", nativeQuery = true)
+    List<Produto> retornaCincoProdutosMaisCaros();
 }

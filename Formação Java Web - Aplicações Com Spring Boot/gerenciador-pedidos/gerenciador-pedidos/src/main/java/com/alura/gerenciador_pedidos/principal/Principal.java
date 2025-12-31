@@ -371,17 +371,50 @@ public class Principal {
 //            System.out.println(mapaContagemPorCategoria);
 //        }
 
-        System.out.println("FILTRAR CATEGORIAS COM NÚMERO MÍNIMO DE PRODUTOS\nDigite a quantidade mínima:");
-        long quantidade = leitura.nextLong();
-        leitura.nextLine();
+//        System.out.println("FILTRAR CATEGORIAS COM NÚMERO MÍNIMO DE PRODUTOS\nDigite a quantidade mínima:");
+//        long quantidade = leitura.nextLong();
+//        leitura.nextLine();
+//
+//        List<Tuple> categorias = produtoRepository.retornaCategoriasComMinomoDeProdutos(quantidade);
+//
+//        if (categorias.isEmpty()) {
+//            System.out.println("Não encontrei nenhuma categoria.");
+//        } else {
+//            System.out.println("Categorias encontradas:");
+//            categorias.forEach(System.out::println);
+//        }
 
-        List<Tuple> categorias = produtoRepository.retornaCategoriasComMinomoDeProdutos(quantidade);
+//        System.out.println("ECONTRANDO PRODUTOS POR NOME OU CATEGORIA\nDigite o nome:");
+//        String nome = leitura.nextLine();
+//        System.out.println("Digite a categoria:");
+//        String categoria = leitura.nextLine();
+//
+//        if (nome.equals("")) {
+//            nome = null;
+//        }
+//        if(categoria.equals("")) {
+//            categoria = null;
+//        }
+//
+//        List<Produto> produtoList = produtoRepository.retornaProdutoPorNomeOuCategoria(nome, categoria);
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Nenhum produto encontrado.");
+//        } else {
+//            System.out.println("Produtos encontrados:");
+//            produtoList.forEach(System.out::println);
+//        }
 
-        if (categorias.isEmpty()) {
-            System.out.println("Não encontrei nenhuma categoria.");
-        } else {
-            System.out.println("Categorias encontradas:");
-            categorias.forEach(System.out::println);
+        System.out.println("ENCONTRANDO OS 5 PRODUTOS MAIS CAROS");
+
+        List<Produto> produtoList = produtoRepository.retornaCincoProdutosMaisCaros();
+
+        if (produtoList.isEmpty()) {
+            System.out.println("Não encontrado produtos.");
+        } else{
+            System.out.println("Produtos encontrados:");
+            produtoList.forEach(System.out::println);
         }
+
     }
 }
