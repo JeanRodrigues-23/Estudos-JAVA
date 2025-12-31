@@ -1,13 +1,18 @@
 package com.alura.gerenciador_pedidos.principal;
 
+import com.alura.gerenciador_pedidos.model.Categoria;
+import com.alura.gerenciador_pedidos.model.Fornecedor;
+import com.alura.gerenciador_pedidos.model.Pedido;
 import com.alura.gerenciador_pedidos.model.Produto;
 import com.alura.gerenciador_pedidos.repository.CategoriaRepository;
 import com.alura.gerenciador_pedidos.repository.FornecedorRepository;
 import com.alura.gerenciador_pedidos.repository.PedidoRepository;
 import com.alura.gerenciador_pedidos.repository.ProdutoRepository;
+import jakarta.persistence.Tuple;
+import jdk.swing.interop.SwingInterOpUtils;
 
-import java.util.List;
-import java.util.Scanner;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Principal {
     private CategoriaRepository categoriaRepository;
@@ -49,14 +54,14 @@ public class Principal {
 //        Pedido pedido2 = new Pedido(LocalDate.now().minusDays(1));
 //        pedido2.setProdutos(List.of(produto2));
 //        pedidoRepository.saveAll(List.of(pedido1, pedido2));
-
-        // Testando consultas e verificando os relacionamentos
-        System.out.println("Produtos na categoria Eletrônicos:");
-        categoriaRepository.findById(11L).ifPresent(categoria ->
-                categoria.getProdutos().forEach(produto ->
-                        System.out.println(" - " + produto.getNome())
-                )
-        );
+//
+//        // Testando consultas e verificando os relacionamentos
+//        System.out.println("Produtos na categoria Eletrônicos:");
+//        categoriaRepository.findById(11L).ifPresent(categoria ->
+//                categoria.getProdutos().forEach(produto ->
+//                        System.out.println(" - " + produto.getNome())
+//                )
+//        );
 
         System.out.println("\nPedidos e seus produtos:");
         pedidoRepository.findAll().forEach(pedido -> {
@@ -266,18 +271,117 @@ public class Principal {
 //            produtoList.forEach(System.out::println);
 //        }
 
-        System.out.println("\nLOCALIZAR OS CINCO PEDIDOS MAIS BARATOS DE UMA CATEGORIA\nDigite a categoria desejada:");
-        String categoriaDigitada = leitura.nextLine();
+//        System.out.println("\nLOCALIZAR OS CINCO PEDIDOS MAIS BARATOS DE UMA CATEGORIA\nDigite a categoria desejada:");
+//        String categoriaDigitada = leitura.nextLine();
+//
+//        List<Produto> produtoList = produtoRepository.findByCategoria_NomeOrderByPreco(categoriaDigitada);
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Nenhum produto localizado.");
+//        } else {
+//            System.out.println("Produtos encontrados:");
+//            produtoList.forEach(p -> System.out.println((produtoList.indexOf(p) + 1) + " - " + p));
+//        }
 
-        List<Produto> produtoList = produtoRepository.findByCategoria_NomeOrderByPreco(categoriaDigitada);
 
-        if (produtoList.isEmpty()) {
-            System.out.println("Ops! Nenhum produto localizado.");
+//        System.out.println("PRODUTOS COM VALOR MÍNIMO\nDigite um valor mínimo para a busca dos produtos:");
+//        Double valorMinimo = leitura.nextDouble();
+//        leitura.nextLine();
+//
+//        List<Produto> produtoList = produtoRepository.produtosValorMinimo(valorMinimo);
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Não encontrei nenhum produto com valor abaixo do informado.");
+//        } else {
+//            System.out.println("Prdutos encontrados:");
+//            produtoList.forEach(System.out::println);
+//        }
+
+//        System.out.println("PRODUTOS ORDENADOS POR PRECO DECRESCENTE:");
+//        List<Produto> produtoList = produtoRepository.produtosOrdenadosPorPreco();
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Não encontrei nenhum produto para ordenar.");
+//        } else {
+//            System.out.println("Prdutos ordenados:");
+//            produtoList.forEach(p -> System.out.println(produtoList.indexOf(p) + 1 + " - " + p));
+//        }
+
+//        System.out.println("PRODUTOS ORDENADOS POR PRECO CRESCENTE:");
+//        List<Produto> produtoList = produtoRepository.produtosOdernadosPorPrecoDecrescente();
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Não encontrei nenhum produto para ordenar.");
+//        } else {
+//            System.out.println("Prdutos ordenados:");
+//            produtoList.forEach(p -> System.out.println(produtoList.indexOf(p) + 1 + " - " + p));
+//        }
+
+//        System.out.println("PRODUTOS QUE COMEÇAM COM A LETRA ESCOLHIDA\nDigite a letra desejada:");
+//        String letraEscolhida = leitura.nextLine();
+//
+//        List<Produto> produtoList = produtoRepository.listarProdutosComLetra(letraEscolhida);
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Não encontrei nenhum produto que comece com essa letra.");
+//        } else {
+//            System.out.println("Prdutos encontrados:");
+//            produtoList.forEach(p -> System.out.println(produtoList.indexOf(p) + 1 + " - " + p));
+//        }
+
+//        System.out.println("RETORNAR PEDIDOS FEITOS ENTRE DUAS DATAS:");
+//
+//        System.out.println("Informe a primeira data (yyyy-MM-dd)");
+//        String data1 = leitura.nextLine();
+//        System.out.println("Informe a segunda data (yyyy-MM-dd)");
+//        String data2 = leitura.nextLine();
+//
+//        LocalDate data1Formatada = LocalDate.parse(data1);
+//        LocalDate data2Formatada = LocalDate.parse(data2);
+//
+//        List<Pedido> produtoList = pedidoRepository.listarPedidosEntreData(data1Formatada, data2Formatada);
+//
+//        if (produtoList.isEmpty()) {
+//            System.out.println("Ops! Não encontrei nenhum pedido com a data entre estas.");
+//        } else {
+//            System.out.println("Prdutos encontrados:");
+//            produtoList.forEach(p -> System.out.println(produtoList.indexOf(p) + 1 + " - " + p));
+//        }
+
+//        System.out.println("RETORNAR MEDIA DO PRECO DE TODOS OS PRODUTOS");
+//
+//        System.out.printf("A média de preço dos produtos é: %.2f\n", produtoRepository.retornaMediaPrecoProdutos());
+
+//        System.out.println("RETORNAR O PREÇO MÁXIMO DE UM PRODUTO EM UMA CATEGORIA\nDigite a categoria:");
+//        String categoriaEscolhida = leitura.nextLine();
+//
+//        Optional<Produto> produto = produtoRepository.retornaMaisCaroDaCategoria(categoriaEscolhida);
+//
+//        produto.ifPresentOrElse(p -> {
+//            System.out.println("Produto encontrado: " + p);
+//        },
+//        () -> System.out.println("Nenhum produto encontrado."));
+
+//        System.out.println("CONTAGEM DO NÚMERO DE PRODUTOS POR CATEGORIA");
+//        List<Tuple> mapaContagemPorCategoria = produtoRepository.ContagemDeProdutosPorCategoria();
+//
+//        if (mapaContagemPorCategoria.isEmpty()) {
+//            System.out.println("Não encontrado produtos.");
+//        } else {
+//            System.out.println(mapaContagemPorCategoria);
+//        }
+
+        System.out.println("FILTRAR CATEGORIAS COM NÚMERO MÍNIMO DE PRODUTOS\nDigite a quantidade mínima:");
+        long quantidade = leitura.nextLong();
+        leitura.nextLine();
+
+        List<Tuple> categorias = produtoRepository.retornaCategoriasComMinomoDeProdutos(quantidade);
+
+        if (categorias.isEmpty()) {
+            System.out.println("Não encontrei nenhuma categoria.");
         } else {
-            System.out.println("Produtos encontrados:");
-            produtoList.forEach(p -> System.out.println((produtoList.indexOf(p) + 1) + " - " + p));
+            System.out.println("Categorias encontradas:");
+            categorias.forEach(System.out::println);
         }
-
-
     }
 }
