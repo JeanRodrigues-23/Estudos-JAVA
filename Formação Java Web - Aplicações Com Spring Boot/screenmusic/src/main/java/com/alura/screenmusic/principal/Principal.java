@@ -1,18 +1,23 @@
 package com.alura.screenmusic.principal;
 
 import com.alura.screenmusic.model.Artista;
-import com.alura.screenmusic.model.Genero;
+import com.alura.screenmusic.model.Musica;
 import com.alura.screenmusic.repository.ArtistaReposotiry;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.alura.screenmusic.repository.MusicaRepository;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class Principal {
     private final Scanner scanner = new Scanner(System.in);
     private final ArtistaReposotiry artistaReposotiry;
+    private final MusicaRepository musicaRepository;
 
-    public Principal(ArtistaReposotiry artistaReposotiry) {
+    public Principal(ArtistaReposotiry artistaReposotiry, MusicaRepository musicaRepository) {
         this.artistaReposotiry = artistaReposotiry;
+        this.musicaRepository = musicaRepository;
     }
 
     public void executarMenu() {
@@ -38,13 +43,13 @@ public class Principal {
                     cadastrarArtistas();
                     break;
                 case 2:
-                    //Metodo
+                    cadastrarMusicas();
                     break;
                 case 3:
-                    //Metodo
+                    listarMusicas();
                     break;
                 case 4:
-                    //Metodo
+                    buscarMusicasPorArtista();
                     break;
                 case 5:
                     //Metodo
@@ -71,7 +76,7 @@ public class Principal {
             Artista artista = new Artista(nome, idade, genero, decada);
             artistaReposotiry.save(artista);
 
-            System.out.println("Artista salvo com sucesso! Deseja cadastrar outro?");
+            System.out.println("Artista salvo com sucesso! Deseja cadastrar outro (n ou s)?");
             String escolha = scanner.nextLine();
             while (!escolha.equalsIgnoreCase("n") && !escolha.equalsIgnoreCase("s")) {
                 System.out.println("Não entendi. Responda com 's' ou 'n'. Deseja cadastrar outro artista?");
@@ -83,5 +88,55 @@ public class Principal {
                 break;
             }
         }
+    }
+
+    private void cadastrarMusicas() {
+        while(true) {
+            System.out.println("Digite o nome da música:");
+            String nome = scanner.nextLine();
+            System.out.println("Digite a data de lançamento (yyyy-MM-dd):");
+            LocalDate dataLancamento = LocalDate.parse(scanner.nextLine());
+            System.out.println("Digite o gênero da música:");
+            String genero = scanner.nextLine();
+
+            Optional<Artista> artistaOptional;
+            do {
+                System.out.println("Digite o nome do artista:");
+                String artista = scanner.nextLine();
+                artistaOptional = artistaReposotiry.findByNomeContainingIgnoreCase(artista);
+
+                if (artistaOptional.isEmpty()) {
+                    System.out.println("Não localizei este artista. Cadastre-o primeiro.");
+                }
+            } while (artistaOptional.isEmpty());
+
+            Musica musica = new Musica(nome, dataLancamento, genero, artistaOptional.get());
+            musicaRepository.save(musica);
+            System.out.println("Música salva com sucesso!");
+            break;
+        }
+    }
+
+    public void listarMusicas() {
+        System.out.println("-- Lista de músicas salvas --");
+        List<Musica> musicaList = musicaRepository.findAll();
+        musicaList.forEach(System.out::println);
+    }
+
+    public void buscarMusicasPorArtista() {
+
+        System.out.println("Digite o nome do artista: ");
+        String nomeArtista = scanner.nextLine();
+
+        Optional<Artista> artistaOptional = artistaReposotiry.findByNomeContainingIgnoreCase(nomeArtista);
+
+        while (artistaOptional.isEmpty()) {
+            System.out.println("Não encontrei o artista. Digite o nome novamente:");
+            nomeArtista = scanner.nextLine();
+            artistaOptional = artistaReposotiry.findByNomeContainingIgnoreCase(nomeArtista);
+        }
+
+        System.out.println("Musicas que pertencem ao artista " + artistaOptional.get().getNome());
+        artistaOptional.get().getMusicas().forEach(System.out::println);
     }
 }

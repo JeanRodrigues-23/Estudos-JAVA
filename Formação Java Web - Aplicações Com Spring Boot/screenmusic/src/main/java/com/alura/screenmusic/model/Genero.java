@@ -7,7 +7,7 @@ public enum Genero {
     JAZZ("Jazz"),
     BLUES("Blues"),
     CLASSICA("Classica"),
-    ELETRRONICA("Eletronica"),
+    ELETRONICA("Eletronica"),
     REGGAE("Reggae");
 
     private final String genero;

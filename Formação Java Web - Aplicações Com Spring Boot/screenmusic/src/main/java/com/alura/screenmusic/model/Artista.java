@@ -8,14 +8,18 @@ import java.util.List;
 @Entity
 public class Artista {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private int idade;
+    @Enumerated(EnumType.STRING)
     private Genero genero;
     private int decada;
-    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL)
-    private List<Musica> musica = new ArrayList<>();
+    @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Musica> musicas = new ArrayList<>();
+
+    public Artista() {
+    }
 
     public Artista(String nome, int idade, String genero, int decada) {
         this.nome = nome;
@@ -54,5 +58,22 @@ public class Artista {
 
     public void setDecada(int decada) {
         this.decada = decada;
+    }
+
+    public List<Musica> getMusicas() {
+        return musicas;
+    }
+
+    public void setMusicas(List<Musica> musicas) {
+        this.musicas = musicas;
+    }
+
+    @Override
+    public String toString() {
+        return "Artista: " +
+                "nome: " + nome +
+                "decada: " + decada +
+                ", genero: " + genero +
+                ", idade: " + idade;
     }
 }
