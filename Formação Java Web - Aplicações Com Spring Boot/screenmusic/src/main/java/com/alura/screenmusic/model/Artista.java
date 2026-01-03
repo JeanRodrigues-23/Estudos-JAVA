@@ -14,6 +14,8 @@ public class Artista {
     private int idade;
     @Enumerated(EnumType.STRING)
     private Genero genero;
+    @Enumerated(EnumType.STRING)
+    private TipoArtista tipoArtista;
     private int decada;
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Musica> musicas = new ArrayList<>();
@@ -21,10 +23,11 @@ public class Artista {
     public Artista() {
     }
 
-    public Artista(String nome, int idade, String genero, int decada) {
+    public Artista(String nome, int idade, String genero, String tipoArtista, int decada) {
         this.nome = nome;
         this.idade = idade;
         this.genero = Genero.retornaGenero(genero);
+        this.tipoArtista = TipoArtista.retornaTipoArtista(tipoArtista);
         this.decada = decada;
     }
 
@@ -74,6 +77,7 @@ public class Artista {
                 "nome: " + nome +
                 "decada: " + decada +
                 ", genero: " + genero +
+                ", tipo: " + tipoArtista +
                 ", idade: " + idade;
     }
 }

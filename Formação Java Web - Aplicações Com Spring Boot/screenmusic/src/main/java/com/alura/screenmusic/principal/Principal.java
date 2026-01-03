@@ -69,11 +69,13 @@ public class Principal {
             scanner.nextLine();
             System.out.println("Digite o gênero musical do artista:");
             String genero = scanner.nextLine();
+            System.out.println("O artista é solo, está em dupla ou banda?");
+            String tipoArtista = scanner.nextLine();
             System.out.println("Este artista é de qual década?");
             int decada = scanner.nextInt();
             scanner.nextLine();
 
-            Artista artista = new Artista(nome, idade, genero, decada);
+            Artista artista = new Artista(nome, idade, genero, tipoArtista, decada);
             artistaReposotiry.save(artista);
 
             System.out.println("Artista salvo com sucesso! Deseja cadastrar outro (n ou s)?");

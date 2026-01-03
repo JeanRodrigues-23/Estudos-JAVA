@@ -11,7 +11,7 @@ public enum TipoArtista {
         this.tipoArtista = tipoArtista;
     }
 
-    public TipoArtista retornaTipoArtista(String tipoArtista) {
+    public static TipoArtista retornaTipoArtista(String tipoArtista) {
         for (TipoArtista tipoArtistaEnum : TipoArtista.values()) {
             if (tipoArtistaEnum.tipoArtista.equalsIgnoreCase(tipoArtista)) {
                 return tipoArtistaEnum;
