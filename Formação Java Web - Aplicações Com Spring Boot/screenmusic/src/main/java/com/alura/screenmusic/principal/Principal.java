@@ -94,6 +94,18 @@ public class Principal {
 
     private void cadastrarMusicas() {
         while(true) {
+
+            Optional<Artista> artistaOptional;
+            do {
+                System.out.println("Qual o artista dessa música?");
+                String artista = scanner.nextLine();
+                artistaOptional = artistaReposotiry.findByNomeContainingIgnoreCase(artista);
+
+                if (artistaOptional.isEmpty()) {
+                    System.out.println("Não localizei este artista.");
+                }
+            } while (artistaOptional.isEmpty());
+
             System.out.println("Digite o nome da música:");
             String nome = scanner.nextLine();
             System.out.println("Digite a data de lançamento (yyyy-MM-dd):");
@@ -101,18 +113,8 @@ public class Principal {
             System.out.println("Digite o gênero da música:");
             String genero = scanner.nextLine();
 
-            Optional<Artista> artistaOptional;
-            do {
-                System.out.println("Digite o nome do artista:");
-                String artista = scanner.nextLine();
-                artistaOptional = artistaReposotiry.findByNomeContainingIgnoreCase(artista);
-
-                if (artistaOptional.isEmpty()) {
-                    System.out.println("Não localizei este artista. Cadastre-o primeiro.");
-                }
-            } while (artistaOptional.isEmpty());
-
             Musica musica = new Musica(nome, dataLancamento, genero, artistaOptional.get());
+            artistaOptional.get().getMusicas().add(musica);
             musicaRepository.save(musica);
             System.out.println("Música salva com sucesso!");
             break;
