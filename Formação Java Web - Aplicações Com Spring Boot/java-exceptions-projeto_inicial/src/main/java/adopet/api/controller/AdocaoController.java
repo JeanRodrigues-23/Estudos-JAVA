@@ -4,11 +4,13 @@ import adopet.api.dto.AdocaoDTO;
 import adopet.api.dto.AprovarAdocaoDTO;
 import adopet.api.dto.ReprovarAdocaoDTO;
 import adopet.api.dto.SolicitacaoDeAdocaoDTO;
+import adopet.api.exception.AdocaoEmAndamentoException;
+import adopet.api.exception.LimiteAdocoesException;
+import adopet.api.exception.PetAdotadoException;
 import adopet.api.service.AdocaoService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,14 +40,7 @@ public class AdocaoController {
     @PostMapping
     @Transactional
     public ResponseEntity<String> solicitar(@RequestBody @Valid SolicitacaoDeAdocaoDTO dados){
-        try {
-            this.service.solicitar(dados);
-        } catch (IllegalStateException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        } catch (UnsupportedOperationException e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
-
+        this.service.solicitar(dados);
         return ResponseEntity.ok("Adoção solicitada com sucesso!");
     }
 
