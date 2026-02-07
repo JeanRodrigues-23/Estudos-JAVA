@@ -1,27 +1,18 @@
 package br.com.alura;
 
+import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.service.AbrigoService;
 import br.com.alura.service.PetService;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
 import java.util.Scanner;
 
 public class AdopetConsoleApplication {
 
     public static void main(String[] args) {
         System.out.println("##### BOAS VINDAS AO SISTEMA ADOPET CONSOLE #####");
-        AbrigoService abrigoService = new AbrigoService();
-        PetService petService = new PetService();
+        ClientHttpConfiguration clientHttpConfiguration = new ClientHttpConfiguration();
+        AbrigoService abrigoService = new AbrigoService(clientHttpConfiguration);
+        PetService petService = new PetService(clientHttpConfiguration);
         try {
             int opcaoEscolhida = 0;
             while (opcaoEscolhida != 5) {

@@ -1,29 +1,33 @@
 package br.com.alura.service;
 
-import br.com.alura.util.RequisicaoUtil;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
+import br.com.alura.client.ClientHttpConfiguration;
+import br.com.alura.domain.Abrigo;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.*;
 
 import java.io.IOException;
 import java.net.http.HttpResponse;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class AbrigoService {
+    private final ClientHttpConfiguration clientHttpConfiguration;
+
+    public AbrigoService(ClientHttpConfiguration clientHttpConfiguration) {
+        this.clientHttpConfiguration = clientHttpConfiguration;
+    }
 
     public void listarAbrigos() throws IOException, InterruptedException {
         String uri = "http://localhost:8080/abrigos";
-        HttpResponse<String> response = RequisicaoUtil.dispararRequisicaoGet(uri);
+        HttpResponse<String> response = clientHttpConfiguration.dispararRequisicaoGet(uri);
 
-        String responseBody = response.body();
-        JsonArray jsonArray = JsonParser.parseString(responseBody).getAsJsonArray();
+        Abrigo[] abrigos = new ObjectMapper().readValue(response.body(), Abrigo[].class);
+        List<Abrigo> abrigoList = Arrays.stream(abrigos).toList();
         System.out.println("Abrigos cadastrados:");
-        for (JsonElement element : jsonArray) {
-            JsonObject jsonObject = element.getAsJsonObject();
-            long id = jsonObject.get("id").getAsLong();
-            String nome = jsonObject.get("nome").getAsString();
-            System.out.println(id +" - " +nome);
+        for (Abrigo abrigo : abrigoList) {
+            System.out.println(abrigo.getId() + " - " + abrigo.getNome());
         }
     }
 
@@ -35,13 +39,10 @@ public class AbrigoService {
         System.out.println("Digite o email do abrigo:");
         String email = new Scanner(System.in).nextLine();
 
-        JsonObject json = new JsonObject();
-        json.addProperty("nome", nome);
-        json.addProperty("telefone", telefone);
-        json.addProperty("email", email);
+        Abrigo abrigo = new Abrigo(nome, telefone, email);
 
         String uri = "http://localhost:8080/abrigos";
-        HttpResponse<String> response = RequisicaoUtil.dispararRequisicaoPost(uri, json);
+        HttpResponse<String> response = clientHttpConfiguration.dispararRequisicaoPost(uri, abrigo);
 
         int statusCode = response.statusCode();
         String responseBody = response.body();
